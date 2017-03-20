@@ -1,0 +1,18 @@
+﻿@model BBlog.Models.Blog
+
+<h4>@Model.Category</h4>
+
+<div>
+    <article>
+        <h1>@Html.ActionLink(Model.Title, "Post", "Home", new { category = Model.Category, id = Model.Id })</h1>
+        <div>
+            Posted <span>@Html.DisplayFor(model => model.PostDate)</span>
+        </div>
+        <br />
+        <div>
+            @Html.Raw(Model.GetSummary())
+        </div>
+    </article>
+</div>
+
+<hr />

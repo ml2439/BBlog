@@ -1,0 +1,26 @@
+﻿@model BBlog.Models.BlogCategoryViewModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search Result</h2>
+
+<form asp-controller="Search" asp-action="Index" method="get">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control" asp-controller="Search" asp-action="Index" placeholder="Search" />
+        <span class="input-group-btn">
+            <button class="btn" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </span>    
+    </div>
+</form>
+<hr />
+
+<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+    @foreach (var item in Model.blogs)
+    {
+        @Html.Partial("_PostSummary", item)
+    }
+</div>

@@ -1,0 +1,18 @@
+﻿<ul class=""nav nav-pills nav-stacked"">
+    <li><a asp-area="" asp-controller="Home" asp-action="Dev">Dev</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Recipe">Recipe</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Game">Game</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Roam">Roam</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+</ul>
+<hr />
+<form asp-controller="Search" asp-action="Index" method="get">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control" asp-controller="Search" asp-action="Index" placeholder="Search" />
+        <span class="input-group-btn">
+            <button class="btn" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </span>
+    </div>
+</form>

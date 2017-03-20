@@ -1,0 +1,11 @@
+﻿@model IEnumerable<BBlog.Models.Blog>
+@{
+    ViewData["Title"] = "Dev";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_Post", item)
+    }
+</div>

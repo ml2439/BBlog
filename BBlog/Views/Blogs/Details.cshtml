@@ -1,0 +1,25 @@
+@model BBlog.Models.Blog
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <article>
+        <h1>@Html.ActionLink(Model.Title, "Details", "Blogs", new { id = Model.Id })</h1>
+        <div>
+            Posted <span>@Html.DisplayFor(model => model.PostDate)</span>
+        </div>
+        <div>
+            @Html.DisplayFor(model => model.Body)
+        </div>
+    </article>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

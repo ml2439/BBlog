@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BBlog.Models.Blog>
+@{
+    ViewBag.Title = "Mighty Q";
+    ViewBag.PageImage = "https://hahvahd15mengqiao.files.wordpress.com/2015/05/img_20150515_202309.jpg?w=2000&h=1500&crop=1";
+    ViewBag.Page = "Mighty Q";
+    ViewBag.PageSub = "MQ's personal blog";
+}
+
+<p class="pager">
+    @if (ViewBag.HasPreviousPage)
+    {
+        <a class="prev" href="@Url.Action("Index", "Home", new { page = ViewBag.PreviousPage })">
+            &lt; Previous
+        </a>
+    }
+
+    @if (ViewBag.HasNextPage)
+    {
+        <a class="next" href="@Url.Action("Index", "Home", new { page = ViewBag.NextPage })">
+            Next &gt;
+        </a>
+    }
+</p>
+
+<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_PostSummary", item)
+    }
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    @Html.Partial("_SideBar")
+</div>
+
+<hr />
