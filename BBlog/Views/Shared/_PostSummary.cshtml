@@ -1,18 +1,23 @@
 ﻿@model BBlog.Models.Blog
 
-<h4>@Model.Category</h4>
-
-<div>
+<div class="postsum">
     <article>
-        <h1>@Html.ActionLink(Model.Title, "Post", "Home", new { category = Model.Category, id = Model.Id })</h1>
-        <div>
-            Posted <span>@Html.DisplayFor(model => model.PostDate)</span>
-        </div>
+        <h3>@Html.ActionLink(Model.Title, "Post", "Home", new { category = Model.Category, id = Model.Id })</h3>
+        <p class="subinfo">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <span class="inline-space">@Model.PostDate.ToString("MMM dd, yyyy")</span>
+            <i class="glyphicon glyphicon-folder-open"></i>
+            <span class="inline-space"><em>@Model.Category</em></span>
+            @if (Model.Tags != null)
+            {
+                <i class="glyphicon glyphicon-tags"></i>
+                <span class="inline-space">@Model.Tags</span>
+            }
+        </p>
         <br />
         <div>
             @Html.Raw(Model.GetSummary())
         </div>
     </article>
 </div>
-
 <hr />

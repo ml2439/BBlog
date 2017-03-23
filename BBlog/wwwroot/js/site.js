@@ -1,3 +1,8 @@
 ﻿// Write your Javascript code.
-
-// ajax partial rendering
+$(function () {
+    $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        var $intro = $(".intro-header");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $intro.height());
+    });
+});

@@ -71,7 +71,7 @@ namespace BBlog.Controllers
         public async Task<IActionResult> Dev()
         {
             var DevBlogs = _context.Blog.Where(b => b.Category == "Dev");
-            return View(await DevBlogs.OrderByDescending(x => x.PostDate).Take(5).ToListAsync());
+            return View(await DevBlogs.OrderByDescending(x => x.PostDate).ToListAsync());
         }
 
         public async Task<IActionResult> Game()

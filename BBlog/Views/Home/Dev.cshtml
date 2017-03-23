@@ -1,11 +1,13 @@
 ﻿@model IEnumerable<BBlog.Models.Blog>
 @{
-    ViewData["Title"] = "Dev";
+    ViewBag.Title = "Dev";
+    ViewBag.PageImage = "//c1.staticflickr.com/8/7705/27169750543_fe61ca2aee_b.jpg";
+    ViewBag.Page = "Hello";
+    ViewBag.Class = "page-header";
 }
-
-<div>
+<div class="container">
     @foreach (var item in Model)
     {
-        @Html.Partial("_Post", item)
+        @Html.Partial("_PostSummary", item)
     }
 </div>

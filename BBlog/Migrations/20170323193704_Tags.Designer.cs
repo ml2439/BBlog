@@ -8,9 +8,10 @@ using BBlog.Models;
 namespace BBlog.Migrations
 {
     [DbContext(typeof(BBlogContext))]
-    partial class BBlogContextModelSnapshot : ModelSnapshot
+    [Migration("20170323193704_Tags")]
+    partial class Tags
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")

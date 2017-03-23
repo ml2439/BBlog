@@ -1,4 +1,74 @@
+.logo {
+  width: 50px;
+  margin: 5px 10px 0px 0px; }
+
 .intro-header {
-  background-size: 100% auto;
+  height: calc(100vh);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  position: relative; }
+
+.page-header {
+  margin: 0px 0px 20px 0px;
+  height: calc(30vh);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+
+.post-header {
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+
+.intro-body {
+  margin: 0 15%;
+  width: 100%;
+  color: #e7e6d6;
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  z-index: 10; }
+
+.intro-action {
+  color: #e7e6d6;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10%; }
+
+.intro-none {
+  margin: 50px 0px 0px 0px; }
+
+.navbar-nav > li > a {
+  color: white; }
+
+.navbar-fixed-top {
+  background-color: transparent;
+  border: none; }
+
+.navbar-fixed-top.scrolled {
+  background-color: #333 !important;
+  transition: background-color; }
+
+.search-bar {
+  background-color: transparent; }
+
+.postsum {
+  padding: 0px 20px; }
+
+.subinfo {
+  color: #808080; }
+
+.inline-space {
+  margin: 0px 8px 0px 3px; }
+
+a {
+  color: #0f3b82; }
+
+footer {
+  color: #9d9d9d;
+  background-color: #333;
+  padding: 15px 0 5px;
+  text-align: center; }

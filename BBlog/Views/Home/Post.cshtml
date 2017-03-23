@@ -1,6 +1,9 @@
 ﻿@model BBlog.Models.Blog
 @{
-    ViewData["Title"] = Model.Title;
+    ViewBag.Title = Model.Title;
+    ViewBag.PageImage = "//c1.staticflickr.com/8/7362/13009150674_3c03d3363f_h.jpg";
+    ViewBag.Class = "post-header";
 }
-
-@Html.Partial("_Post")
+<div class="container">
+    @Html.Partial("_Post") 
+</div>

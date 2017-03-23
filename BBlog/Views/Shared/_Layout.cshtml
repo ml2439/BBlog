@@ -19,7 +19,7 @@
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,9 +28,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Mighty Q</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-left">
+                    <img src="~/images/mightyq-nowords.png" class="logo"/>
+                </a>
             </div>
-            <div class="navbar-collapse collapse navbar-right">
+            <div class="navbar-collapse collapse navbar-left">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Dev">Dev</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Recipe">Recipe</a></li>
@@ -39,35 +41,35 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                 </ul>
             </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <form class="navbar-form" asp-controller="Search" asp-action="Index" method="get">
+                    <input type="text" class="form-control search-bar" name="searchString" placeholder="Search" />
+                </form>
+            </div>
         </div>
     </nav>
     @if (ViewBag.PageImage != null && !string.IsNullOrWhiteSpace(ViewBag.PageImage))
     {
-        <header class="intro-header" style="background-image: url('@ViewBag.PageImage')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xl-12">
-                        <div >
-                            <h2>@ViewBag.Page</h2>
-                            @if (ViewBag.PageSub != null)
-                            {
-                                <hr class="small">
-                                <span class="subheading">@ViewBag.PageSub</span>
-                            }
-                        </div>
-                    </div>
-                </div>
+        <header class=@ViewBag.Class style="background-image: url('@ViewBag.PageImage')">
+            <div class="container intro-body">
+                <h1>@ViewBag.Page</h1>
+                @if (ViewBag.PageSub != null)
+                {
+                    <span class="subheading">@ViewBag.PageSub</span>
+                }
+            </div>
+            <div class="intro-action">
+                <i class="glyphicon glyphicon-chevron-down"></i>
             </div>
         </header>
     }
     else
     {
-        <div class="row">&nbsp;</div>
+        <div class="row intro-none">&nbsp;</div>
     }
-    <div class="container body-content">
+    <div class="container-fluid body-content">
         @RenderBody()
     </div>
-    <hr />
     <footer>
         <p>&copy; 2017 - Mighty Q</p>
     </footer>

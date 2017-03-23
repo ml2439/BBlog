@@ -1,17 +1,22 @@
 ﻿@model BBlog.Models.Blog
 
-<h4>@Model.Category</h4>
-
-<div>
+<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <article>
-        <h1>@Html.ActionLink(Model.Title, "Post", "Home", new { category = Model.Category, id = Model.Id })</h1>
-        <div>
-            Posted <span>@Html.DisplayFor(model => model.PostDate)</span>
-        </div>
+        <h2>@Model.Title</h2>
+        <p class="subinfo">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <span class="inline-space">@Model.PostDate.ToString("MMM dd, yyyy")</span>
+            <i class="glyphicon glyphicon-folder-open"></i>
+            <span class="inline-space"><em>@Model.Category</em></span>
+            @if (Model.Tags != null)
+            {
+                <i class="glyphicon glyphicon-tags"></i>
+                <span class="inline-space">@Model.Tags</span>
+            }
+        </p>
+        <br />
         <div>
             @Html.Raw(Model.Body)
         </div>
     </article>
 </div>
-
-<hr />

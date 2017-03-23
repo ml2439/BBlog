@@ -13,6 +13,8 @@ namespace BBlog.Models
         [Required]
         public string Category { get; set; }
 
+        public string Tags { get; set; }
+
         [Required]
         [DataType(DataType.MultilineText)]
         public string Body { get; set; }
