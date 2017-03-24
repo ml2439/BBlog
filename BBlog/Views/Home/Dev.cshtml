@@ -2,9 +2,7 @@
 @{
     ViewBag.Title = "Dev";
 }
-<div class="container">
-    @foreach (var item in Model)
-    {
-        @Html.Partial("_PostSummary", item)
-    }
-</div>
+@foreach (var item in Model)
+{
+    @Html.Partial("_PostSummary", item)
+}
