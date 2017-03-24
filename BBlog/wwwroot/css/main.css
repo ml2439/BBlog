@@ -9,15 +9,9 @@
   background-attachment: fixed;
   position: relative; }
 
-.page-header {
-  margin: 0px 0px 20px 0px;
-  height: calc(30vh);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative; }
-
 .post-header {
   height: 50px;
+  background-color: #333;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative; }
@@ -25,7 +19,7 @@
 .intro-body {
   margin: 0 15%;
   width: 100%;
-  color: #e7e6d6;
+  color: beige;
   position: absolute;
   left: 0;
   bottom: 20%;
@@ -60,6 +54,28 @@
 
 .subinfo {
   color: #808080; }
+
+.inline-box {
+  float: left;
+  width: 25%;
+  height: 300px; }
+
+.inline-box:hover {
+  box-shadow: inset 0 0 0 25px beige;
+  transition-duration: .5s; }
+
+.inline-box > a {
+  color: beige;
+  text-decoration: none; }
+
+.center-box {
+  margin: auto;
+  width: 75%;
+  padding: 25% 0; }
+
+.center-box > hr {
+  border-top: 1px solid beige;
+  margin-top: 0; }
 
 .inline-space {
   margin: 0px 8px 0px 3px; }

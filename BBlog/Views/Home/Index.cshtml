@@ -1,35 +1,45 @@
-﻿@model IEnumerable<BBlog.Models.Blog>
+﻿@*@model IEnumerable<BBlog.Models.Blog>*@
 @{
     ViewBag.Title = "Home";
     ViewBag.PageImage = "//c1.staticflickr.com/9/8870/28345670214_ddd934896b_b.jpg";
-    ViewBag.Page = "Hello";
+    ViewBag.Page = "Hello.";
     ViewBag.Class = "intro-header";
 }
 
-<p class="pager">
-    @if (ViewBag.HasPreviousPage)
-    {
-        <a class="prev" href="@Url.Action("Index", "Home", new { page = ViewBag.PreviousPage })">
-            &lt; Previous
-        </a>
-    }
-
-    @if (ViewBag.HasNextPage)
-    {
-        <a class="next" href="@Url.Action("Index", "Home", new { page = ViewBag.NextPage })">
-            Next &gt;
-        </a>
-    }
-</p>
-
-<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-    @foreach (var item in Model)
-    {
-        @Html.Partial("_PostSummary", item)
-    }
+<div class="inline-box" style="background-color: #f68a4c;">
+    <a asp-controller="Home" asp-action="Dev">
+        <div class="center-box">
+            <h1>DEV</h1>
+            <hr />
+            <p>Cool technology notes.</p>
+        </div>
+    </a>
 </div>
-<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-    @Html.Partial("_SideBar")
+<div class="inline-box" style="background-color: #fec64d;">
+    <a asp-controller="Home" asp-action="Recipe">
+        <div class="center-box">
+            <h1>RECIPE</h1>
+            <hr />
+            <p>Secret cooking tutorials.</p>
+        </div>
+    </a>
+</div>
+<div class="inline-box" style="background-color: #00918a;">
+    <a asp-controller="Home" asp-action="Game">
+        <div class="center-box">
+            <h1>GAME</h1>
+            <hr />
+            <p>Awesome gameplay moments.</p>
+        </div>
+    </a>
+</div>
+<div class="inline-box" style="background-color: #b9dfc6;">
+    <a asp-controller="Home" asp-action="Roam">
+        <div class="center-box">
+            <h1>ROAM</h1>
+            <hr />
+            <p>Imaginative everything else.</p>
+        </div>
+    </a>
 </div>
 
-<hr />
