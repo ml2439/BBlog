@@ -1,3 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Game";
+﻿@model IEnumerable<BBlog.Models.Blog>
+@{
+    ViewBag.Title = "Game";
+}
+@foreach (var item in Model)
+{
+    @Html.Partial("_PostSummary", item)
 }

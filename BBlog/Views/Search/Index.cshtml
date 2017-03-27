@@ -1,22 +1,12 @@
 ﻿@model BBlog.Models.BlogCategoryViewModel
 
 @{
-    ViewData["Title"] = "Search";
+    ViewBag.Title = "Search";
+    ViewBag.PageImage = "//c1.staticflickr.com/8/7705/27169750543_db26705c25_k.jpg";
+    ViewBag.Page = "Search Result";
+    ViewBag.Class = "category-header";
+
 }
-<h2>Search Result</h2>
-
-<form asp-controller="Search" asp-action="Index" method="get">
-    <div class="input-group">
-        <input type="text" name="searchString" class="form-control" asp-controller="Search" asp-action="Index" placeholder="Search" />
-        <span class="input-group-btn">
-            <button class="btn" type="submit">
-                <i class="glyphicon glyphicon-search"></i>
-            </button>
-        </span>
-    </div>
-</form>
-<hr />
-
 <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     @foreach (var item in Model.blogs)
     {

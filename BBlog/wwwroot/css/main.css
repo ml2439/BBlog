@@ -3,10 +3,16 @@
   margin: 5px 10px 0px 0px; }
 
 .intro-header {
-  height: calc(100vh);
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative; }
+
+.category-header {
+  height: 30vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative; }
 
 .post-header {
@@ -87,3 +93,15 @@ footer {
   background-color: #333;
   padding: 15px 0 5px;
   text-align: center; }
+
+.share-buttons {
+  margin: 20px; }
+
+.share-buttons span {
+  display: block;
+  font-size: 18px;
+  margin: 0 25%; }
+
+.share-buttons img {
+  width: 35px;
+  display: inline; }

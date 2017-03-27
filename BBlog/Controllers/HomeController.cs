@@ -46,28 +46,28 @@ namespace BBlog.Controllers
         [Route("Dev")]
         public async Task<IActionResult> Dev()
         {
-            var DevBlogs = _context.Blog.Where(b => b.Category == "Dev");
-            return View(await DevBlogs.OrderByDescending(x => x.PostDate).ToListAsync());
+            return await Grabber("Dev");
         }
 
+        [Route("Game")]
         public async Task<IActionResult> Game()
         {
-            var DevBlogs = _context.Blog.Where(b => b.Category == "Game");
-            return View(await DevBlogs.OrderByDescending(x => x.PostDate).Take(5).ToListAsync());
+            return await Grabber("Game");
         }
 
+        [Route("Recipe")]
         public async Task<IActionResult> Recipe()
         {
-            var DevBlogs = _context.Blog.Where(b => b.Category == "Recipe");
-            return View(await DevBlogs.OrderByDescending(x => x.PostDate).Take(5).ToListAsync());
+            return await Grabber("Recipe");
         }
 
+        [Route("Roam")]
         public async Task<IActionResult> Roam()
         {
-            var DevBlogs = _context.Blog.Where(b => b.Category == "Roam");
-            return View(await DevBlogs.OrderByDescending(x => x.PostDate).Take(5).ToListAsync());
+            return await Grabber("Roam");
         }
 
+        [Route("About")]
         public IActionResult About()
         {
             return View();
@@ -76,6 +76,13 @@ namespace BBlog.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        // helper methods only work for this class
+        private async Task<IActionResult> Grabber(string s)
+        {
+            var Blogs = _context.Blog.Where(b => b.Category == s);
+            return View(await Blogs.OrderByDescending(x => x.PostDate).ToListAsync());
         }
     }
 }
