@@ -1,12 +1,11 @@
+using BBlog.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using BBlog.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace BBlog.Controllers
 {
@@ -28,6 +27,11 @@ namespace BBlog.Controllers
             IQueryable<string> categoryQuery = from b in _context.Blog
                                                orderby b.Category
                                                select b.Category;
+
+            // A list of PostDate that exist in the database
+            IQueryable<DateTime> timeQuery = from b in _context.Blog
+                                             orderby b.PostDate
+                                             select b.PostDate;
 
             var blogs = from b in _context.Blog
                         select b;

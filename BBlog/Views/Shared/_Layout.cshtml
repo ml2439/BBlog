@@ -68,7 +68,14 @@
         <header class="post-header"></header>
     }
     <div class="container">
-        @RenderBody()
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                @RenderBody()
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                @Html.Partial("_Sidebar")
+            </div>
+        </div>
     </div>
     <footer>
         <p>&copy; 2017 - Mighty Q</p>

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace BBlog.Controllers
 {
-    [Route("[controller]")]
     public class SearchController : Controller
     {
         private readonly BBlogContext _context;
@@ -17,6 +16,7 @@ namespace BBlog.Controllers
             _context = context;
         }
 
+        [Route("Search")]
         public async Task<IActionResult> Index(string searchString)
         {
             var blogs = from b in _context.Blog
@@ -33,5 +33,18 @@ namespace BBlog.Controllers
             return View(blogCategoryVM);
         }
 
+        [Route("Archive")]
+        public async Task<IActionResult> Archive(string monthyear)
+        {
+            var blogs = from b in _context.Blog
+                        select b;
+
+            blogs = blogs.Where(s => s.PostDate.ToString("MMM yyyy").Equals(monthyear));
+
+            var blogVM = new BlogCategoryViewModel();
+            blogVM.blogs = await blogs.ToListAsync();
+
+            return View(blogVM);
+        }
     }
 }
