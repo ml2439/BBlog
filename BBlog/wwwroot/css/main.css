@@ -103,6 +103,9 @@ footer {
   padding: 15px 0 5px;
   text-align: center; }
 
+.sidebar {
+  padding: 10% 5%; }
+
 .share-buttons {
   margin: 20px; }
 

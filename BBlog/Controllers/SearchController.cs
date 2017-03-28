@@ -1,5 +1,6 @@
 ﻿using BBlog.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace BBlog.Controllers
                 blogs = blogs.Where(s => s.Title.Contains(searchString) || s.Body.Contains(searchString));
             }
 
-            var blogCategoryVM = new BlogCategoryViewModel();
+            var blogCategoryVM = new BlogSelectViewModel();
             blogCategoryVM.blogs = await blogs.ToListAsync();
 
             return View(blogCategoryVM);
@@ -39,9 +40,12 @@ namespace BBlog.Controllers
             var blogs = from b in _context.Blog
                         select b;
 
-            blogs = blogs.Where(s => s.PostDate.ToString("MMM yyyy").Equals(monthyear));
+            if (!String.IsNullOrEmpty(monthyear))
+            {
+                blogs = blogs.Where(s => s.PostDate.ToString("MMM yyyy").Equals(monthyear));
+            }
 
-            var blogVM = new BlogCategoryViewModel();
+            var blogVM = new BlogSelectViewModel();
             blogVM.blogs = await blogs.ToListAsync();
 
             return View(blogVM);

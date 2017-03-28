@@ -28,11 +28,7 @@ namespace BBlog.Controllers
                                                orderby b.Category
                                                select b.Category;
 
-            // A list of PostDate that exist in the database
-            IQueryable<DateTime> timeQuery = from b in _context.Blog
-                                             orderby b.PostDate
-                                             select b.PostDate;
-
+            // All blogs
             var blogs = from b in _context.Blog
                         select b;
             
@@ -46,7 +42,7 @@ namespace BBlog.Controllers
                 blogs = blogs.Where(s => s.Category == blogCategory);
             }
 
-            var blogCategoryVM = new BlogCategoryViewModel();
+            var blogCategoryVM = new BlogSelectViewModel();
             blogCategoryVM.categories = new SelectList(await categoryQuery.Distinct().ToListAsync());
             blogCategoryVM.blogs = await blogs.ToListAsync();
 

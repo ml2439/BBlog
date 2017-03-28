@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace BBlog.Models
 {
-    public class BlogCategoryViewModel
+    public class BlogSelectViewModel
     {
         public List<Blog> blogs;
         public SelectList categories;
 
-        // contains the selected category
+        // the selected category
         public string blogCategory { get; set; }
     }
 }
