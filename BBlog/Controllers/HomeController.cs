@@ -15,15 +15,11 @@ namespace BBlog.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Blog
+                .OrderByDescending(x => x.PostDate).ToListAsync());
         }
-        //public async Task<IActionResult> Index()
-        //{
-        //    return View(await _context.Blog
-        //        .OrderByDescending(x => x.PostDate).ToListAsync());
-        //}
 
         [Route("{category}/{id}")]
         public async Task<IActionResult> Post(string category, int? id)

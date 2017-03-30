@@ -1,0 +1,36 @@
+<div class="inline-box" style="background-color: #f68a4c;">
+    <a asp-controller="Home" asp-action="Dev">
+        <div class="center-box">
+            <h1>DEV</h1>
+            <hr />
+            <p>Cool technology notes.</p>
+        </div>
+    </a>
+</div>
+<div class="inline-box" style="background-color: #fec64d;">
+    <a asp-controller="Home" asp-action="Recipe">
+        <div class="center-box">
+            <h1>RECIPE</h1>
+            <hr />
+            <p>Secret cooking tutorials.</p>
+        </div>
+    </a>
+</div>
+<div class="inline-box" style="background-color: #00918a;">
+    <a asp-controller="Home" asp-action="Game">
+        <div class="center-box">
+            <h1>GAME</h1>
+            <hr />
+            <p>Awesome gameplay moments.</p>
+        </div>
+    </a>
+</div>
+<div class="inline-box" style="background-color: #b9dfc6;">
+    <a asp-controller="Home" asp-action="Roam">
+        <div class="center-box">
+            <h1>ROAM</h1>
+            <hr />
+            <p>Imaginative everything else.</p>
+        </div>
+    </a>
+</div>

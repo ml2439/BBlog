@@ -4,7 +4,7 @@
 }
 
 .intro-header {
-    height: 100vh;
+    height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -56,7 +56,7 @@
 
 .navbar-fixed-top.scrolled {
     background-color: #333 !important;
-    transition: background-color;
+    transition: background-color .5s linear;
 }
 
 .search-bar {
@@ -66,33 +66,16 @@
 .postsum {
     padding: 0px 20px;
 }
+.postsum:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
 
 .subinfo {
     color: #808080;
 }
 
-.inline-box {
-    float: left;
-    width: 25%;
-    height: 300px;
-}
-.inline-box:hover {
-    box-shadow: inset 0 0 0 25px beige;
-    transition-duration: .5s;
-}
-.inline-box > a {
-    color: beige;
-    text-decoration: none;
-}
-.center-box {
-    margin: auto;
-    width: 75%;
-    padding: 25% 0;
-}
-.center-box > hr {
-    border-top: 1px solid beige;
-    margin-top: 0;
-}
 .vertical-box {
     margin: auto;
     padding: 2% 6%;
@@ -123,15 +106,4 @@ footer {
 
 .share-buttons {
     margin: 20px;
-}
-
-.share-buttons span {
-    display: block;
-    font-size: 18px;
-    margin: 0 25%;
-}
-
-.share-buttons img {
-    width: 35px;
-    display: inline;
 }

@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-left">
-                    <img src="~/images/mightyq-nowords.png" class="logo"/>
+                    <img src="~/images/mqicon.png" class="logo"/>
                 </a>
             </div>
             <div class="navbar-collapse collapse navbar-left">
@@ -53,10 +53,6 @@
         <header class=@ViewBag.Class style="background-image: url('@ViewBag.PageImage')">
             <div class="intro-body">
                 <h1>@ViewBag.Page</h1>
-                @if (ViewBag.PageSub != null)
-                {
-                    <span class="subheading">@ViewBag.PageSub</span>
-                }
             </div>
             <div class="intro-action">
                 <i class="glyphicon glyphicon-chevron-down"></i>
