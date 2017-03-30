@@ -76,17 +76,8 @@
     color: #808080;
 }
 
-.vertical-box {
-    margin: auto;
-    padding: 2% 6%;
-}
 .inline-space {
     margin: 0px 8px 0px 3px;
-}
-.divheader {
-    font-family: helvetica;
-    padding: 1% 3%;
-    font-size: x-large;
 }
 
 a {
@@ -105,5 +96,7 @@ footer {
 }
 
 .share-buttons {
-    margin: 20px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
