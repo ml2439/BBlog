@@ -1,6 +1,7 @@
 node_modules/
 TBA/
 bin/
+obj/
 
 *.suo
 *.vs
