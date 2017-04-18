@@ -1,12 +1,7 @@
-﻿@model IEnumerable<BBlog.Models.Blog>
-@{
+﻿@{
     ViewBag.Title = "Home";
     ViewBag.PageImage = "images/home.jpg";
     ViewBag.Page = "Hello.";
     ViewBag.Class = "intro-header";
 }
 
-@foreach (var item in Model)
-{
-    @Html.Partial("_PostSummary", item)
-}

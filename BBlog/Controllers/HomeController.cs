@@ -15,7 +15,13 @@ namespace BBlog.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("Blog")]
+        public async Task<IActionResult> Blog()
         {
             return View(await _context.Blog
                 .OrderByDescending(x => x.PostDate).ToListAsync());
