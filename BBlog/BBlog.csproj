@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\css\custom.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.4.337" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />

@@ -5,17 +5,17 @@
             <img src="~/images/avatar.jpg" style="max-width: 100%; height: auto; border-radius: 50%; position: absolute;" />
         </div>
         <div style="text-align: center; position: relative; top: -30px;">
-            <p><strong><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #714242;">Mengqiao Li</span></strong></p>
+            <p><span style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 16px; color: #714242;">Mengqiao Li</span></p>
         </div>
     </div>
     <hr />
-    <div style="padding: 2%; background-color: #dddddd; border-radius: 4px;">
+    <div style="padding: 2%; background-color: #fed1bb; border-radius: 4px;">
         <h4 style="text-align: center;">Category</h4>
-        <div class="ajaxcall list-group">
-            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Dev" })">Dev</a>
-            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Game" })">Game</a>
-            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Recipe" })">Recipe</a>
-            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Roam" })">Roam</a>
+        <div class="ajaxcall">
+            <a style="margin: 1px 0" class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Dev" })">Dev</a>
+            <a style="margin: 1px 0" class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Game" })">Game</a>
+            <a style="margin: 1px 0" class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Recipe" })">Recipe</a>
+            <a style="margin: 1px 0" class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Roam" })">Roam</a>
         </div>
     </div>
     <hr />
@@ -32,7 +32,7 @@
         </form>
     </div>
     <hr />
-    <div style="padding: 2%; background-color: #dddddd; border-radius: 4px;">
+    <div style="padding: 2%; background-color: #fed1bb; border-radius: 4px;">
         <h4 style="text-align: center;">Archive</h4>
         <form asp-controller="Search" asp-action="Archive" method="get">
             <ul class="nav nav-pills nav-stacked">
