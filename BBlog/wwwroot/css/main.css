@@ -60,7 +60,7 @@
 .postsum {
   padding: 0px 20px; }
 
-.postsum > article:hover {
+.postsum:hover {
   box-shadow: 25px 0 50px #fed1bb; }
 
 .subinfo {
