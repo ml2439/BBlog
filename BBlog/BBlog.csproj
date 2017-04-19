@@ -17,11 +17,11 @@
 
   <ItemGroup>
     <Content Remove="wwwroot/images\capture.png" />
+    <Content Remove="wwwroot/images\game.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="wwwroot\css\custom.css" />
-    <Content Include="wwwroot\images\capture.png" />
   </ItemGroup>
 
   <ItemGroup>
