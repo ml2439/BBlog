@@ -66,10 +66,8 @@
 .postsum {
     padding: 0px 20px;
 }
-.postsum:hover {
-    -moz-box-shadow: 0 0 10px #ccc;
-    -webkit-box-shadow: 0 0 10px #ccc;
-    box-shadow: 0 0 10px #ccc;
+.postsum > article:hover {
+    box-shadow: 25px 0 50px #fed1bb;
 }
 
 .subinfo {
