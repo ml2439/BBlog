@@ -1,6 +1,7 @@
 ﻿using BBlog.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,16 +16,31 @@ namespace BBlog.Controllers
             _context = context;
         }
 
+        // Home page
         public IActionResult Index()
         {
             return View();
         }
 
         [Route("Blog")]
-        public async Task<IActionResult> Blog()
+        public async Task<IActionResult> Blog(string blogCategory)
         {
-            return View(await _context.Blog
-                .OrderByDescending(x => x.PostDate).ToListAsync());
+            // All blogs
+            var blogs = from b in _context.Blog
+                        select b;
+
+            if (!String.IsNullOrEmpty(blogCategory))
+            {
+                blogs = blogs.Where(s => s.Category == blogCategory);
+            }
+
+            return View(await blogs.OrderByDescending(x => x.PostDate).ToListAsync());
+        }
+
+        [Route("About")]
+        public IActionResult About()
+        {
+            return View();
         }
 
         [Route("{category}/{id}")]
@@ -45,46 +61,9 @@ namespace BBlog.Controllers
             return View(blog);
         }
 
-        [Route("Dev")]
-        public async Task<IActionResult> Dev()
-        {
-            return await Grabber("Dev");
-        }
-
-        [Route("Game")]
-        public async Task<IActionResult> Game()
-        {
-            return await Grabber("Game");
-        }
-
-        [Route("Recipe")]
-        public async Task<IActionResult> Recipe()
-        {
-            return await Grabber("Recipe");
-        }
-
-        [Route("Roam")]
-        public async Task<IActionResult> Roam()
-        {
-            return await Grabber("Roam");
-        }
-
-        [Route("About")]
-        public IActionResult About()
-        {
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View();
-        }
-
-        // helper methods only work for this class
-        private async Task<IActionResult> Grabber(string s)
-        {
-            var Blogs = _context.Blog.Where(b => b.Category == s);
-            return View(await Blogs.OrderByDescending(x => x.PostDate).ToListAsync());
         }
     }
 }

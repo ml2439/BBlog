@@ -1,6 +1,5 @@
 ﻿using BBlog.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -17,7 +16,7 @@ namespace BBlog.Controllers
             _context = context;
         }
 
-        [Route("Search")]
+        [Route("[controller]")]
         public async Task<IActionResult> Index(string searchString)
         {
             var blogs = from b in _context.Blog
