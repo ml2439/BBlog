@@ -34,6 +34,10 @@ namespace BBlog.Controllers
                 blogs = blogs.Where(s => s.Category == blogCategory);
             }
 
+            // Only render partially if is ajax request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView(await blogs.OrderByDescending(x => x.PostDate).ToListAsync());
+
             return View(await blogs.OrderByDescending(x => x.PostDate).ToListAsync());
         }
 

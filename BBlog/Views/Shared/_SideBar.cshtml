@@ -11,14 +11,12 @@
     <hr />
     <div style="padding: 2%; background-color: #dddddd; border-radius: 4px;">
         <h4 style="text-align: center;">Category</h4>
-        <form asp-controller="Home" asp-action="Blog" method="get">
-            <ul class="nav nav-pills nav-stacked">
-                <li><button class="form-control" name="blogCategory" type="submit" value="Dev">Dev</button></li>
-                <li><button class="form-control" name="blogCategory" type="submit" value="Game">Game</button></li>
-                <li><button class="form-control" name="blogCategory" type="submit" value="Recipe">Recipe</button></li>
-                <li><button class="form-control" name="blogCategory" type="submit" value="Roam">Roam</button></li>
-            </ul>
-        </form>
+        <div class="ajaxcall list-group">
+            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Dev" })">Dev</a>
+            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Game" })">Game</a>
+            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Recipe" })">Recipe</a>
+            <a class="form-control btn btn-default" href="@Url.Action("Blog", "Home", new { blogCategory = "Roam" })">Roam</a>
+        </div>
     </div>
     <hr />
     <div>
