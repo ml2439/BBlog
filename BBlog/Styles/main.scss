@@ -48,6 +48,9 @@
 .navbar-nav > li > a {
     color: white;
 }
+.navbar-nav > li > a:hover {
+    background-color: #fed1bb;
+}
 
 .navbar-fixed-top {
     background-color: transparent;
@@ -97,4 +100,12 @@ footer {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+}
+
+.article-info {
+    margin-top: 1%;
+}
+.article-info:hover {
+    background-color: #fed1bb;
+    transition: background-color .5s linear;
 }

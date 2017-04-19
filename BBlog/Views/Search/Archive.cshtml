@@ -7,10 +7,16 @@
     ViewBag.Class = "category-header";
 
 }
+<div style="text-align: center;">
+    <h3>Blogs</h3>
+    <hr />
+</div>
 <div>
     @foreach (var item in Model.blogs)
     {
-        @Html.Partial("_PostSummary", item)
+        <div class="article-info">
+            <span style="font-size:25px;">@Html.ActionLink(item.Title, "Post", "Home", new { category = item.Category, id = item.Id })</span>
+            <span style="color:#aaa;float:right;position: relative;bottom: -15px;">@item.PostDate.ToString("MM/dd/yyyy")</span>
+        </div>
     }
 </div>
-
