@@ -67,10 +67,12 @@
 }
 
 .postsum {
+    transition: transform .2s linear, box-shadow .2s linear;
     padding: 0px 20px;
 }
 .postsum:hover {
-    box-shadow: 25px 0 50px #fed1bb;
+    transform: translate(-10px, 0);
+    box-shadow: 8px 8px 15px -4px #fed1bb;
 }
 
 .subinfo {
